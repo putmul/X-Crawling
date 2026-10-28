@@ -111,7 +111,7 @@ def main():
         st.subheader("Dataset & Sentiment Analysis")
 
         # Load dataset
-        dataset_path = 'rupiah_predicted.csv'
+        dataset_path = 'dataset/rupiah_predicted.csv'
         data = pd.read_csv(dataset_path)
 
         # Display dataset
@@ -144,7 +144,7 @@ def main():
         
         from sklearn.cluster import KMeans
         # Load dataset
-        data = pd.read_csv('rupiah_clean.csv')
+        data = pd.read_csv('dataset/rupiah_clean.csv')
         # Convert text data to list
         text_data = data['full_text'].to_list()
 
@@ -171,7 +171,7 @@ def main():
                 true_k = n_clusters
 
         # KMeans clustering
-        model = KMeans(n_clusters=n_clusters, random_state=42, n_init='auto')
+        model = KMeans(n_clusters=true_k, random_state=42, n_init='auto')
         cluster_labels = model.fit_predict(X)
 
         # Display clusters
